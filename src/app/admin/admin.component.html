@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add New Product to Inventory</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <div>
+        <label>Product Category:</label>
+        <br>
+        <select #newCategory>
+          <option value="Hat">Hat</option>
+          <option value="Accessory">Accessory</option>
+          <option value="Bulk Coffee">Bulk Coffee</option>
+          <option value="Bulk Tea">Bulk Tea</option>
+          <option value="Comestibles">Comestibles</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Product Model:</label>
+        <br>
+        <input #newModel>
+      </div>
+
+      <div>
+        <label>Product Brand:</label>
+        <br>
+        <input #newBrand>
+      </div>
+
+      <div>
+        <label>Product price:</label>
+        <br>
+        <input #newPrice>
+      </div>
+      <button (click)="submitForm(newCategory.value, newModel.value, newBrand.value, newPrice.value); newCategory.value=''; newModel.value=''; newBrand.value=''; newPrice.value=''">Add</button>
+    </div>
+  </div>
+</div>
+
+
+  <!-- <textarea #newBrand></textarea> -->

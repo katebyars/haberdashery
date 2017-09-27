@@ -24,7 +24,7 @@ export class ProductDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.productId = parseInt(urlParameters['id']);
     });
-    this.productToDisplay = this.productService.getProductById(this.productId);
+    // this.productToDisplay = this.productService.getProductById(this.productId);
   }
 
 }

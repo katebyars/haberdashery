@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-marketplace',
@@ -10,7 +11,7 @@ import { ProductService } from '../product.service';
   providers: [ProductService]
 })
 export class MarketplaceComponent implements OnInit {
-  products: Product[];
+  products: FirebaseListObservable<any[]>;
 
   constructor(private router: Router, private productService: ProductService){}
 
@@ -18,8 +19,8 @@ export class MarketplaceComponent implements OnInit {
     this.products = this.productService.getProducts();
   }
 
-  gotToDetailPage(clickedProduct: Product){
-    this.router.navigate(['products', clickedProduct.id]);
+  goToDetailPage(clickedProduct: Product){
+    // this.router.navigate(['products', clickedProduct.id]);
   }
 
 }
