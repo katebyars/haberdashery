@@ -23,4 +23,12 @@ export class ProductService {
     return this.database.object('products/' + productId);
   }
 
+  updateProduct(localUpdatedProduct){
+    var productEntryinFirebase = this.getProductById(localUpdatedProduct.$key);
+    productEntryinFirebase.update({category: localUpdatedProduct.category,
+    model: localUpdatedProduct.model,
+    brand: localUpdatedProduct.brand,
+    price: localUpdatedProduct.price});
+  }
+
 }
