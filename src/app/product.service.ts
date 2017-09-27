@@ -20,11 +20,7 @@ export class ProductService {
   }
 
   getProductById(productId: number){
-    // for (var i=0; i <= PRODUCTS.length -1; i++){
-    //   if (PRODUCTS[i].id === productId){
-    //     return PRODUCTS[i];
-    //   }
-    // }
+    return this.database.object('products/' + productId);
   }
 
 }

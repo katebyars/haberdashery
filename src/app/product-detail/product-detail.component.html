@@ -1,5 +1,5 @@
 <div>
-  <h3>{{productToDisplay.model}}</h3>
-  <h4>{{productToDisplay.brand}}</h4>
-  <p>{{productToDisplay.category}}: ${{productToDisplay.price}}</p>
+  <h3>{{(productToDisplay | async)?.model}}</h3>
+  <h4>{{(productToDisplay | async)?.brand}}</h4>
+  <p>{{(productToDisplay | async)?.category}}: ${{(productToDisplay | async)?.price}}</p>
 </div>

@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-product-detail',
@@ -12,7 +13,7 @@ import { ProductService } from '../product.service';
 })
 export class ProductDetailComponent implements OnInit {
   productId: number;
-  productToDisplay: Product;
+  productToDisplay;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,9 +23,9 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.productId = parseInt(urlParameters['id']);
+      this.productId = urlParameters['id'];
     });
-    // this.productToDisplay = this.productService.getProductById(this.productId);
+    this.productToDisplay = this.productService.getProductById(this.productId);
   }
 
 }
