@@ -15,6 +15,10 @@ export class ProductService {
     return this.products;
   }
 
+  addProduct(newProduct: Product) {
+    this.products.push(newProduct);
+  }
+
   getProductById(productId: number){
     // for (var i=0; i <= PRODUCTS.length -1; i++){
     //   if (PRODUCTS[i].id === productId){
