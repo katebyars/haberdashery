@@ -31,4 +31,9 @@ export class ProductService {
     price: localUpdatedProduct.price});
   }
 
+  deleteProduct(localProductToDelete){
+    var productEntryinFirebase = this.getProductById(localProductToDelete.$key);
+    productEntryinFirebase.remove();
+  }
+
 }
